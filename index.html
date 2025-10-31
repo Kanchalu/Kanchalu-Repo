@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- CSS File -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <title>Given Kanchalu - Portfolio</title>
+  <script src="js/home.js" defer></script>
+</head>
+<body>
+<!-- Welcome Popup -->
+<div class="welcome-popup" id="welcomePopup">
+  <div class="popup-content">
+    <h2>Welcome to My Portfolio! 👋</h2>
+    <p>Thank you for visiting my website. I'm Given Kanchalu, a Web Developer based in Zambia.</p>
+    <p>Feel free to explore my projects and get in touch if you'd like to work together!</p>
+    <button class="btn popup-close" id="closePopup">Get Started</button>
+  </div>
+</div>
+
+<!-- ========== NAVIGATION ========== -->
+<nav class="navbar">
+  <div class="container">
+    <!-- Logo -->
+    <a href="#home" class="logo">
+      <span class="material-icons">web</span> Kanchalu
+    </a>
+
+    <!-- Navigation Menu -->
+    <ul class="nav-menu" id="nav-menu">
+      <li class="nav-item">
+        <a href="#home" class="nav-link">
+          <span class="material-icons">home</span> Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#about" class="nav-link">
+          <span class="material-icons">info</span> About
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#services" class="nav-link">
+          <span class="material-icons">build</span> Services
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#portfolio" class="nav-link">
+          <span class="material-icons">work</span> Portfolio
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#contact" class="nav-link">
+          <span class="material-icons">mail</span> Contact
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="login.html" class="nav-link">
+          <span class="material-icons">login</span> Login
+        </a>
+      </li>
+    </ul>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- ========== HOME/HERO SECTION ========== -->
+  <section class="home" id="home">
+    <div class="home-content">
+      <h1 class="home-title">I'm <span>Given Kanchalu</span></h1>
+      <p class="home-subtitle">Web Developer & Designer</p>
+      <a href="login.html" class="btn">Hire Me</a>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      
+      <div class="about-container">
+        <div class="about-img">
+          <img src="images/kanchalu.jpg" alt="Given Kanchalu">
+        </div>
+        
+        <div class="about-data">
+          <h3 class="about-subtitle">I am Given Kanchalu</h3>
+          <p class="about-text">
+            A passionate web developer and designer based in Kaoma, Western Province, Zambia. 
+            I create beautiful and functional websites that help businesses grow online. 
+            With expertise in modern web technologies, I bring ideas to life through clean code and creative design.
+          </p>
+          
+          <div class="about-info">
+            <div>
+              <span class="about-info-title">10+</span>
+              <span class="about-info-name">Projects <br> Completed</span>
+            </div>
+            
+            <div>
+              <span class="about-info-title">5+</span>
+              <span class="about-info-name">Years <br> Experience</span>
+            </div>
+            
+            <div>
+              <span class="about-info-title">20+</span>
+              <span class="about-info-name">Happy <br> Clients</span>
+            </div>
+          </div>
+          
+          <div class="about-buttons">
+            <a href="#" class="btn">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section class="skills section">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      
+      <div class="skills-container">
+        <div class="skills-content">
+          <h3 class="skills-subtitle">Technical Skills</h3>
+          
+          <div class="skills-data">
+            <div class="skills-names">
+              <span class="skills-name">HTML5</span>
+            </div>
+            <div class="skills-bar skills-html"></div>
+            <div>
+              <span class="skills-percentage">90%</span>
+            </div>
+          </div>
+          
+          <div class="skills-data">
+            <div class="skills-names">
+              <span class="skills-name">CSS3</span>
+            </div>
+            <div class="skills-bar skills-css"></div>
+            <div>
+              <span class="skills-percentage">85%</span>
+            </div>
+          </div>
+          
+          <div class="skills-data">
+            <div class="skills-names">
+              <span class="skills-name">JavaScript</span>
+            </div>
+            <div class="skills-bar skills-js"></div>
+            <div>
+              <span class="skills-percentage">75%</span>
+            </div>
+          </div>
+          
+          <div class="skills-data">
+            <div class="skills-names">
+              <span class="skills-name">React</span>
+            </div>
+            <div class="skills-bar skills-react"></div>
+            <div>
+              <span class="skills-percentage">70%</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skills-img">
+          <img src="images/skills1.jpg" alt="skills1">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES SECTION ========== -->
+  <section class="services section" id="services">
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      
+      <div class="services-container">
+        <div class="services-content">
+            
+          
+          <img src="images/Web Design.jpg" alt="Web Design" class="services-img">
+            
+          <h3 class="services-title">Web Design</h3>
+          <p class="services-description">
+            Creating beautiful and modern website designs that capture attention and provide excellent user experiences.
+          </p>
+          <a href="service-request.html?service=web-design" class="btn services-btn" data-service="Web Design">Learn More</a>
+        </div>
+        
+        <div class="services-content">
+          <img src="images/Web Development.jpg" alt="Web Development" class="services-img">
+          <h3 class="services-title">Web Development</h3>
+          <p class="services-description">
+            Building responsive and functional websites using the latest web technologies and best practices.
+          </p>
+          <a href="service-request.html?service=web-development" class="btn services-btn" data-service="Web Development">Learn More</a>
+        </div>
+        
+        <div class="services-content">
+          <img src="images/Responsive Design.jpg" alt="Project 6" class="services-img">
+          <h3 class="services-title">Responsive Design</h3>
+          <p class="services-description">
+            Ensuring your website looks perfect on all devices from mobile phones to desktop computers.
+          </p>
+          <a href="service-request.html?service=responsive-design" class="btn services-btn" data-service="Responsive Design">Learn More</a>
+        </div>
+        
+        <div class="services-content">
+          <img src="images/Performance Optimization.jpg" alt="Performance Optimization" class="services-img">
+          <h3 class="services-title">Performance Optimization</h3>
+          <p class="services-description">
+            Optimizing website speed and performance for better user experience and search engine rankings.
+          </p>
+          <a href="service-request.html?service=performance-optimization" class="btn services-btn" data-service="Performance Optimization">Learn More</a>
+        </div>
+        
+        <div class="services-content">
+          <img src="images/Website Maintenance.jpg" alt="web site" class="services-img">
+          <h3 class="services-title">Website Maintenance</h3>
+          <p class="services-description">
+            Providing ongoing support and maintenance to keep your website running smoothly and securely.
+          </p>
+          <a href="service-request.html?service=website-maintenance" class="btn services-btn" data-service="Website Maintenance">Learn More</a>
+        </div>
+        
+        <div class="services-content">
+          <img src="images/SEO Optimization.jpg" alt="seo Optimization" class="services-img">
+          <h3 class="services-title">SEO Optimization</h3>
+          <p class="services-description">
+            Improving your website's visibility in search engines to drive more organic traffic to your site.
+          </p>
+          <a href="service-request.html?service=seo-optimization" class="btn services-btn" data-service="SEO Optimization">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PORTFOLIO SECTION ========== -->
+  <section class="portfolio section" id="portfolio">
+    <div class="container">
+      <h2 class="section-title">Portfolio</h2>
+      
+      <div class="portfolio-container">
+        <div class="portfolio-content">
+          <img src="images/Web Development.jpg" alt="Project 1" class="portfolio-img">
+          <div class="portfolio-data">
+            <h3 class="portfolio-title">E-Commerce Website</h3>
+            <p class="portfolio-description">Modern online store with shopping cart functionality</p>
+            <a href="#" class="portfolio-link">View Project →</a>
+          </div>
+        </div>
+        
+        <div class="portfolio-content">
+          <img src="images/Web Development.jpg" alt="Project 2" class="portfolio-img">
+          <div class="portfolio-data">
+            <h3 class="portfolio-title">Business Website</h3>
+            <p class="portfolio-description">Professional corporate website with CMS</p>
+            <a href="#" class="portfolio-link">View Project →</a>
+          </div>
+        </div>
+        
+        <div class="portfolio-content">
+          <img src="images/Web Development.jpg" alt="Project 3" class="portfolio-img">
+          <div class="portfolio-data">
+            <h3 class="portfolio-title">Portfolio Website</h3>
+            <p class="portfolio-description">Creative portfolio for a photographer</p>
+            <a href="#" class="portfolio-link">View Project →</a>
+          </div>
+        </div>
+        
+        <div class="portfolio-content">
+          <img src="images/Web Development.jpg" alt="Project 4" class="portfolio-img">
+          <div class="portfolio-data">
+            <h3 class="portfolio-title">Restaurant Website</h3>
+            <p class="portfolio-description">Online menu and reservation system</p>
+            <a href="#" class="portfolio-link">View Project →</a>
+          </div>
+        </div>
+        
+        <div class="portfolio-content">
+          <img src="images/Web Development.jpg" alt="Project 5" class="portfolio-img">
+          <div class="portfolio-data">
+            <h3 class="portfolio-title">Landing Page</h3>
+            <p class="portfolio-description">High-converting product landing page</p>
+            <a href="#" class="portfolio-link">View Project →</a>
+          </div>
+        </div>
+        
+        <div class="portfolio-content">
+          <img src="images/Web Development.jpg" alt="Project 6" class="portfolio-img">
+          <div class="portfolio-data">
+            <h3 class="portfolio-title">Web Application</h3>
+            <p class="portfolio-description">Custom web app with user authentication</p>
+            <a href="#" class="portfolio-link">View Project →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- ========== HAPPY CLIENTS SECTION ========== -->
+<section class="testimonials section" id="testimonials">
+  <div class="container">
+    <h2 class="section-title">Happy Clients</h2>
+    <p class="section-subtitle">
+      Hear what our clients in Zambia have to say about our services and projects.
+    </p>
+
+    <div class="marquee-wrapper">
+      <span class="marquee-symbol">&lt;</span>
+      <div class="marquee">
+        <div class="marquee-content">
+          <div class="testimonial-inline">
+            <img src="images/client1.jpg" alt="Chola Mwale" class="testimonial-img">
+            <span>"Given created an outstanding<br> website for our small business.<br> The design is modern, responsive, <br>and user-friendly."</span>
+          </div>
+          <div class="testimonial-inline">
+            <img src="images/client2.jpg" alt="Mutinta Phiri" class="testimonial-img">
+            <span>"Working with Given was a<br> fantastic experience. <br>Communication was smooth and the result <br>exceeded our expectations."</span>
+          </div>
+          <div class="testimonial-inline">
+            <img src="images/client3.jpg" alt="David Kachali" class="testimonial-img">
+            <span>"The website looks amazing <br>and functions perfectly on all devices. <br>Highly recommended for anyone wanting <br>a professional online presence."</span>
+          </div>
+          <div class="testimonial-inline">
+            <img src="images/client4.jpg" alt="Loveness Banda" class="testimonial-img">
+            <span>"Given designed a website<br> that truly represents our<br> brand. <br>Traffic has increased significantly <br>since the launch."</span>
+          </div>
+          <div class="testimonial-inline">
+            <img src="images/client5.jpg" alt="Sydney Tembo" class="testimonial-img">
+            <span>"Professional, reliable,<br> and creative. <br>Our customers have provided <br>very positive feedback."</span>
+          </div>
+          <div class="testimonial-inline">
+            <img src="images/client6.jpg" alt="Thandiwe Mwila" class="testimonial-img">
+            <span>"The website is exactly what<br> we envisioned. Given’s professionalism<br> made this project <br>stress-free."</span>
+          </div>
+          <div class="testimonial-inline">
+            <img src="images/client7.jpg" alt="Mwamba Chansa" class="testimonial-img">
+            <span>"Given transformed our <br>outdated website into a modern,<br> professional online platform.<br> Clients have been <br>very impressed."</span>
+          </div>
+          <div class="testimonial-inline">
+            <img src="images/client8.jpg" alt="Ruth Phiri" class="testimonial-img">
+            <span>"Excellent service from <br>start to finish. Given delivered <br>a website that perfectly <br>represents our company."</span>
+          </div>
+          <div class="testimonial-inline">
+            <img src="images/client9.jpg" alt="Joseph Zulu" class="testimonial-img">
+            <span>"We are extremely pleased<br> with the website. <br>The end result is visually <br>appealing, fast, <br>and functional."</span>
+          </div>
+          <div class="testimonial-inline">
+            <img src="images/client10.jpg" alt="Loveness Chikonde" class="testimonial-img">
+            <span>"Professional, creative, <br>and reliable. The website is engaging and improved <br>our online presence tremendously."</span>
+          </div>
+        </div>
+      </div>
+      <span class="marquee-symbol">&gt;</span>
+    </div>
+
+  </div>
+</section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+      
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3 class="contact-subtitle">Get In Touch</h3>
+          <p class="contact-text">
+            Have a project in mind? Let's discuss how I can help bring your ideas to life.
+          </p>
+          
+                  <div class="contact-item">
+          <div class="contact-icon">
+            <i class="material-icons">email</i>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <span>givenkanchalu@example.com</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="material-icons">phone</i>
+          </div>
+          <div>
+            <h4>Phone</h4>
+            <span>+260 773840843</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="material-icons">location_on</i>
+          </div>
+          <div>
+            <h4>Location</h4>
+            <span>Kaoma, Western Province, Zambia</span>
+          </div>
+        </div>
+          </div>
+        
+        <form class="contact-form">
+          <input type="text" placeholder="Name" class="contact-input" required>
+          <input type="email" placeholder="Email" class="contact-input" required>
+          <input type="text" placeholder="Subject" class="contact-input" required>
+          <textarea placeholder="Message" cols="0" rows="7" class="contact-input" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-container">
+        <h3 class="footer-title">Given Kanchalu</h3>
+        <p class="footer-text">Web Developer & Designer</p>
+        
+        <div class="footer-social">
+          <a href="#" class="footer-link">Facebook</a>
+          <a href="#" class="footer-link">Instagram</a>
+          <a href="#" class="footer-link">Twitter</a>
+          <a href="#" class="footer-link">LinkedIn</a>
+        </div>
+        
+        <p class="footer-copy">© 2025 Given Kanchalu. All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

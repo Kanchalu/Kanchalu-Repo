@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Register - Given Kanchalu Portfolio</title>
+  <script src="js/auth.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const registerForm = document.getElementById('registerForm');
+      if (registerForm) {
+        registerForm.addEventListener('submit', handleRegister);
+      }
+    });
+  </script>
+</head>
+<body>
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="material-icons">web</span> Kanchalu
+      </a>
+      <a href="index.html" class="nav-back">
+        <span class="material-icons">arrow_back</span> Back to Home
+      </a>
+    </div>
+  </nav>
+
+  <section class="register-section">
+    <div class="container">
+      <h2 class="form-title">Register</h2>
+      <div id="formMessage" class="form-message"></div>
+      <form class="register-form" id="registerForm">
+        <div class="form-group">
+          <span class="material-icons">person</span>
+          <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+        </div>
+        <div class="form-group">
+          <span class="material-icons">business</span>
+          <input type="text" id="companyName" name="companyName" placeholder="Company Name (Optional)">
+        </div>
+        <div class="form-group">
+          <span class="material-icons">email</span>
+          <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <span class="material-icons">phone</span>
+          <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+        </div>
+        <div class="form-group">
+          <span class="material-icons">lock</span>
+          <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+        <div class="form-group">
+          <span class="material-icons">lock</span>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+        </div>
+        <button type="submit" class="form-submit-btn">Register</button>
+      </form>
+      <p class="form-text">Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-copy">© 2025 Given Kanchalu. All rights reserved</p>
+    </div>
+  </footer>
+</body>
+</html>

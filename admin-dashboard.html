@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Admin Dashboard - Given Kanchalu Portfolio</title>
+  <script src="js/auth.js" defer></script>
+  <script src="js/notify.js" defer></script>
+  <script src="js/migrate.js" defer></script>
+  <script src="js/admin-dashboard.js" defer></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <span class="material-icons">admin_panel_settings</span>
+        <h2>Admin Panel</h2>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="#" class="sidebar-link active" data-view="overview">
+          <span class="material-icons">dashboard</span>
+          Dashboard
+        </a>
+        <a href="#" class="sidebar-link" data-view="users">
+          <span class="material-icons">people</span>
+          Users
+        </a>
+        <a href="#" class="sidebar-link" data-view="users-search">
+          <span class="material-icons">search</span>
+          Search Users
+        </a>
+        <a href="#" class="sidebar-link" data-view="projects">
+          <span class="material-icons">work</span>
+          Projects
+        </a>
+        <a href="#" class="sidebar-link" data-view="messages">
+          <span class="material-icons">message</span>
+          Messages
+          <span class="sidebar-badge" id="adminMessagesCount">0</span>
+          <span class="sidebar-badge" id="adminTicketsCount">0</span>
+        </a>
+        <div class="notifications-trigger sidebar-link">
+          <span class="material-icons">notifications</span>
+          Notifications
+          <span class="notifications-count" id="notificationsCount">0</span>
+        </div>
+        <a href="#" class="sidebar-link">
+        
+    <!-- User Search View -->
+    <section class="dashboard-section" id="users-search-view" style="display: none;">
+        <h2>Search Users</h2>
+        <div class="search-container">
+            <input type="text" id="userSearchInput" placeholder="Search by name, email, company, or phone..." class="search-input">
+            <button id="searchButton" class="btn"><span class="material-icons">search</span></button>
+        </div>
+        <div id="searchResults" class="search-results">
+            <!-- Search results will be populated here -->
+        </div>
+    </section>
+          <span class="material-icons">settings</span>
+          Settings
+        </a>
+      </nav>
+
+      <!-- Notifications Panel -->
+      <div class="notifications-panel" id="notificationsPanel">
+        <div class="notifications-header">
+          <span class="notifications-title">Notifications</span>
+          <span class="material-icons" id="closeNotifications" style="cursor: pointer;">close</span>
+        </div>
+        <div class="notifications-list" id="notificationsList">
+          <!-- Notifications will be inserted here by JavaScript -->
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="index.html" class="sidebar-link">
+          <span class="material-icons">logout</span>
+          Logout
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <div class="header-search">
+          <span class="material-icons">search</span>
+          <input type="text" placeholder="Search...">
+        </div>
+        <div class="header-user">
+          <button id="adminNotifToggle" class="icon-btn" title="Notifications">
+            <span class="material-icons">notifications</span>
+            <span id="adminNotifCount" class="notif-count" style="display:none">0</span>
+          </button>
+          <img src="images/admin-avatar.jpg" alt="Admin" class="user-avatar">
+          <div id="adminNotificationsPanel" class="notifications-panel" aria-hidden="true">
+            <h4>Admin Notifications</h4>
+            <div id="adminNotificationsList" class="notifications-list"></div>
+            <button id="adminClearNotifications" class="btn btn-secondary">Clear All</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        <div id="overview" class="section-view">
+          <div class="dashboard-cards">
+          <div class="stat-card">
+            <div class="stat-info">
+              <h3>Total Clients</h3>
+              <p class="stat-number">0</p>
+            </div>
+            <span class="material-icons">group</span>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info">
+              <h3>New Clients</h3>
+              <p class="stat-number">0</p>
+              <span class="period">This Month</span>
+            </div>
+            <span class="material-icons">person_add</span>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info">
+              <h3>Pending Requests</h3>
+              <p class="stat-number">0</p>
+            </div>
+            <span class="material-icons">hourglass_empty</span>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info">
+              <h3>Active Projects</h3>
+              <p class="stat-number">0</p>
+            </div>
+            <span class="material-icons">engineering</span>
+          </div>
+        </div>
+
+        </div>
+
+        <div id="projects" class="section-view" style="display:none">
+          <div class="service-requests">
+            <h3>Service Requests</h3>
+            <div class="project-grid">
+              <!-- Service request cards will be added here by JavaScript -->
+            </div>
+          </div>
+        </div>
+
+        <div id="users" class="section-view" style="display:none; padding:20px">
+          <h3>Users / Clients</h3>
+          <div style="display:flex;gap:12px;align-items:center;margin-bottom:12px;">
+            <button id="addClientBtn" class="btn new-request-btn"><span class="material-icons">person_add</span> Add Client</button>
+            <input id="usersSearch" placeholder="Search clients by name or email" style="flex:1;padding:8px;border:1px solid #ddd;border-radius:6px"> 
+          </div>
+          <div id="usersList">
+            <!-- Users list rendered here -->
+          </div>
+
+          <!-- Client Add/Edit Modal -->
+          <div id="clientModal" class="modal" style="display:none">
+            <div class="modal-content">
+              <h3 id="clientModalTitle">Add Client</h3>
+              <form id="clientForm">
+                <input type="hidden" id="clientId">
+                <div class="form-group">
+                  <label for="clientEmail">Email</label>
+                  <input id="clientEmail" type="email" required>
+                  <div id="errClientEmail" class="field-error">Please enter a valid email.</div>
+                </div>
+                <div class="form-group">
+                  <label for="clientFullName">Full Name</label>
+                  <input id="clientFullName" type="text" required minlength="2">
+                  <div id="errClientName" class="field-error">Please enter a valid name.</div>
+                </div>
+                <div class="form-group">
+                  <label for="clientCompany">Company</label>
+                  <input id="clientCompany" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="clientPhone">Phone</label>
+                  <input id="clientPhone" type="tel" pattern="[0-9\-\+\s()]{6,20}">
+                  <div id="errClientPhone" class="field-error">Enter a valid phone.</div>
+                </div>
+                <div class="form-group">
+                  <label for="clientRole">Role</label>
+                  <select id="clientRole">
+                    <option value="client">Client</option>
+                    <option value="admin">Admin</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="clientAvatar">Avatar</label>
+                  <input id="clientAvatar" type="file" accept="image/*">
+                  <div id="errClientAvatar" class="field-error">Max 200 KB, JPEG/PNG.</div>
+                  <div style="margin-top:8px"><img id="clientAvatarPreview" src="" alt="Avatar preview" style="width:84px;height:84px;border-radius:8px;border:1px solid #e6e6e6;object-fit:cover;display:none"></div>
+                </div>
+                <div class="modal-actions">
+                  <button type="button" class="btn btn-secondary" id="cancelClient">Cancel</button>
+                  <button type="submit" class="btn" id="saveClient">Save</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="messages" class="section-view" style="display:none; padding:20px">
+          <h3>Messages / Tickets</h3>
+          <div id="adminMessagesList">
+            <!-- Admin will see messages and tickets here -->
+          </div>
+          <!-- Reply modal -->
+          <div id="adminReplyModal" class="modal" style="display:none">
+            <div class="modal-content">
+              <h3>Reply to Ticket</h3>
+              <form id="adminReplyForm">
+                <input type="hidden" id="replyTicketId">
+                <div class="form-group">
+                  <label for="replyMessage">Reply</label>
+                  <textarea id="replyMessage" rows="4" required></textarea>
+                </div>
+                <div class="modal-actions">
+                  <button type="button" class="btn btn-secondary" id="cancelReply">Cancel</button>
+                  <button type="submit" class="btn">Send Reply</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>
